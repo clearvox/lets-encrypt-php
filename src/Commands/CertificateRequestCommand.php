@@ -6,7 +6,6 @@ use Hyn\LetsEncrypt\Helpers\Configured;
 use Hyn\LetsEncrypt\Resources\Account;
 use Hyn\LetsEncrypt\Resources\Certificate;
 use Hyn\LetsEncrypt\Solvers\Http01Solver;
-use Illuminate\Support\Arr;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;
@@ -109,8 +108,8 @@ class CertificateRequestCommand extends Command
 
         $result = $certificate->request();
 
-        $certificate->setCertificate(Arr::get($result, 0));
-        $certificate->setBundle(Arr::get($result, 1));
+        $certificate->setCertificate((isset($result[0]))?$result[0]:null);
+        $certificate->setBundle((isset($result[1]))?$result[0]:null);
 
         return $certificate;
     }

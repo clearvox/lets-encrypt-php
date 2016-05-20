@@ -1,7 +1,7 @@
 {
-    "name": "hyn/lets-encrypt",
-    "description": "Automated SSL certificates with Let's Encrypt",
-    "keywords": ["lets-encrypt", "ssl", "hyn"],
+    "name": "clearvox/lets-encrypt-php",
+    "description": "Automated SSL certificates with Let's Encrypt. Fork of hyn/lets-encrypt",
+    "keywords": ["lets-encrypt", "ssl"],
     "license": "MIT",
     "authors": [
         {
@@ -10,15 +10,14 @@
         }
     ],
     "support": {
-        "issues": "https://github.com/hyn/lets-encrypt/issues",
-        "source": "https://github.com/hyn/lets-encrypt"
+        "issues": "https://github.com/clearvox/lets-encrypt-php/issues",
+        "source": "https://github.com/clearvox/lets-encrypt-php"
     },
     "require": {
         "php": ">=5.6.0",
         "wouter0100/acme": "dev-master",
         "amphp/artax": "2.x-dev",
         "nesbot/carbon": "^1.0.0",
-        "illuminate/support": "^5.2",
         "phpseclib/phpseclib": "^2.0",
         "symfony/console": "^2.6|^3.0"
     },

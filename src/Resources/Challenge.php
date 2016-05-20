@@ -4,7 +4,6 @@ namespace Hyn\LetsEncrypt\Resources;
 
 use Carbon\Carbon;
 use Hyn\LetsEncrypt\Exceptions\UnsolvableChallengeException;
-use Illuminate\Support\Arr;
 
 class Challenge
 {
@@ -137,9 +136,9 @@ class Challenge
         }
 
         foreach ($this->challenges as $id => $challenge) {
-            $solver = Arr::get($challenge, 'solver');
+            $solver = (isset($challenge['solver'])?$challenge['solver']:null);
 
-            return (new $solver())->solve($this, Arr::get($challenge, 'payload'));
+            return (new $solver())->solve($this, (isset($challenge['payload']))?$challenge['payload']:null);
         }
     }
 
